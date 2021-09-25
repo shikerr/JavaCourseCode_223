@@ -9,7 +9,7 @@
         <artifactId>javapractise</artifactId>
         <version>1.0-SNAPSHOT</version>
     </parent>
-    <artifactId>week1</artifactId>
+    <artifactId>week2</artifactId>
     <packaging>pom</packaging>
 
 </project>
