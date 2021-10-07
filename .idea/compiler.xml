@@ -2,12 +2,28 @@
 <project version="4">
   <component name="CompilerConfiguration">
     <annotationProcessing>
+      <profile default="true" name="Default" enabled="true">
+        <outputRelativeToContentRoot value="true" />
+      </profile>
       <profile name="Maven default annotation processors profile" enabled="true">
         <sourceOutputDir name="target/generated-sources/annotations" />
         <sourceTestOutputDir name="target/generated-test-sources/test-annotations" />
         <outputRelativeToContentRoot value="true" />
+        <module name="01gateway" />
         <module name="week2" />
+        <module name="nettysimpletest" />
       </profile>
     </annotationProcessing>
+    <bytecodeTargetLevel>
+      <module name="homework" target="1.8" />
+    </bytecodeTargetLevel>
+  </component>
+  <component name="JavacSettings">
+    <option name="ADDITIONAL_OPTIONS_OVERRIDE">
+      <module name="01gateway" options="-parameters" />
+      <module name="homework" options="-parameters" />
+      <module name="nettysimpletest" options="-parameters" />
+      <module name="week2" options="-parameters" />
+    </option>
   </component>
 </project>
