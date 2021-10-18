@@ -1,0 +1,7 @@
+1、Callable/Future
+2、CompletableFuture
+3、把操作结果写到堆中变量
+4、把操作结果写到文件
+5、数据库
+6、网络
+7、操作结果用volatile修饰

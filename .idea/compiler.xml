@@ -10,6 +10,7 @@
         <sourceTestOutputDir name="target/generated-test-sources/test-annotations" />
         <outputRelativeToContentRoot value="true" />
         <module name="01gateway" />
+        <module name="week4" />
         <module name="week2" />
         <module name="nettysimpletest" />
       </profile>
@@ -24,6 +25,7 @@
       <module name="homework" options="-parameters" />
       <module name="nettysimpletest" options="-parameters" />
       <module name="week2" options="-parameters" />
+      <module name="week4" options="-parameters" />
     </option>
   </component>
 </project>

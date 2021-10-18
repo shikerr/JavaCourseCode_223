@@ -25,7 +25,7 @@ public class HttpInboundHandler extends ChannelInboundHandlerAdapter {
     private HttpOutboundHandler handler;
     private HttpRequestFilter filter = new HeaderHttpRequestFilter();
     private ProxyBizFilter myFilter = new ProxyBizFilter();
-    public OkHttpClient client = new OkHttpClient();
+//    public OkHttpClient client = new OkHttpClient();
 
     public HttpInboundHandler(List<String> proxyServer) {
         this.proxyServer = proxyServer;
@@ -50,7 +50,7 @@ public class HttpInboundHandler extends ChannelInboundHandlerAdapter {
     
             handler.handle(fullRequest, ctx, filter);
             handler.handle(fullRequest, ctx, myFilter);
-            getAsString(fullRequest, ctx);
+//            getAsString(fullRequest, ctx);
 
         } catch(Exception e) {
             e.printStackTrace();
@@ -59,14 +59,14 @@ public class HttpInboundHandler extends ChannelInboundHandlerAdapter {
         }
     }
 
-    public String getAsString(FullHttpRequest fullRequest, ChannelHandlerContext ctx) throws IOException {
-        String url = "http://localhost:8088/api/hello";
-        Request request = new Request.Builder().url(url).build();
-        try (Response response = client.newCall(request).execute()) {
-            ResponseBody body = response.body();
-            return body.string();
-        }
-    }
+//    public String getAsString(FullHttpRequest fullRequest, ChannelHandlerContext ctx) throws IOException {
+//        String url = "http://localhost:8088/api/hello";
+//        Request request = new Request.Builder().url(url).build();
+//        try (Response response = client.newCall(request).execute()) {
+//            ResponseBody body = response.body();
+//            return body.string();
+//        }
+//    }
 
 
 //    private void handlerTest(FullHttpRequest fullRequest, ChannelHandlerContext ctx) {

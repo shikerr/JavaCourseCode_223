@@ -34,18 +34,18 @@ public class HttpInboundServer {
         try {
             ServerBootstrap b = new ServerBootstrap();
             b.option(ChannelOption.SO_BACKLOG, 128)
-                    .childOption(ChannelOption.TCP_NODELAY, true)
-                    .childOption(ChannelOption.SO_KEEPALIVE, true)
-                    .childOption(ChannelOption.SO_REUSEADDR, true)
-                    .childOption(ChannelOption.SO_RCVBUF, 32 * 1024)
-                    .childOption(ChannelOption.SO_SNDBUF, 32 * 1024)
-                    .childOption(EpollChannelOption.SO_REUSEPORT, true)
-                    .childOption(ChannelOption.SO_KEEPALIVE, true)
-                    .childOption(ChannelOption.ALLOCATOR, PooledByteBufAllocator.DEFAULT);
+                .childOption(ChannelOption.TCP_NODELAY, true)
+                .childOption(ChannelOption.SO_KEEPALIVE, true)
+                .childOption(ChannelOption.SO_REUSEADDR, true)
+                .childOption(ChannelOption.SO_RCVBUF, 32 * 1024)
+                .childOption(ChannelOption.SO_SNDBUF, 32 * 1024)
+                .childOption(EpollChannelOption.SO_REUSEPORT, true)
+                .childOption(ChannelOption.SO_KEEPALIVE, true)
+                .childOption(ChannelOption.ALLOCATOR, PooledByteBufAllocator.DEFAULT);
 
             b.group(bossGroup, workerGroup).channel(NioServerSocketChannel.class)
-                    .handler(new LoggingHandler(LogLevel.DEBUG))
-                    .childHandler(new HttpInboundInitializer(this.proxyServers));
+                .handler(new LoggingHandler(LogLevel.DEBUG))
+                .childHandler(new HttpInboundInitializer(this.proxyServers));
 
             Channel ch = b.bind(port).sync().channel();
             System.out.println("开启netty http服务器，监听地址和端口为 http://127.0.0.1:" + port + '/');
